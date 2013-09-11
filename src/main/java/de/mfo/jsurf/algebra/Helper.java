@@ -18,19 +18,19 @@ package de.mfo.jsurf.algebra;
 
 public final class Helper
 {
-    public static double pow( double base, int exp )
+    public static double pow(double base, int exp)
     {
-        double result = 1.0;
-        while( exp > 0 )
-        {
-            if( ( exp & 1 ) == 1 )
-            {
-                result = result * base;
-                exp--;
-            }
-            base = base * base;
-            exp /= 2;
-        }
-        return result;
+	double result= 1.0;
+	while (exp > 0)
+	{
+	    if ((exp & 1) == 1)
+	    {
+		result= result * base;
+		exp--;
+	    }
+	    base= base * base;
+	    exp/= 2;
+	}
+	return result;
     }
 }

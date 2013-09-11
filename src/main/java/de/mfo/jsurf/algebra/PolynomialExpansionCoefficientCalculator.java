@@ -19,14 +19,14 @@ package de.mfo.jsurf.algebra;
 public class PolynomialExpansionCoefficientCalculator implements CoefficientCalculator
 {
     private PolynomialOperation polynomialOperation;
-    
-    public PolynomialExpansionCoefficientCalculator( PolynomialOperation po )
+
+    public PolynomialExpansionCoefficientCalculator(PolynomialOperation po)
     {
-        this.polynomialOperation = po;
+	this.polynomialOperation= po;
     }
-    
-    public UnivariatePolynomial calculateCoefficients( UnivariatePolynomial x, UnivariatePolynomial y, UnivariatePolynomial z )
+
+    public UnivariatePolynomial calculateCoefficients(UnivariatePolynomial x, UnivariatePolynomial y, UnivariatePolynomial z)
     {
-        return this.polynomialOperation.accept( new PolynomialExpansion( x, y, z ), ( Void ) null );
+	return this.polynomialOperation.accept(new PolynomialExpansion(x, y, z), (Void) null);
     }
 }

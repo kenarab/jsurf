@@ -16,6 +16,7 @@
 
 package de.mfo.jsurf.algebra;
 
-public interface ColumnSubstitutorForGradient {
-    public UnivariatePolynomialVector3d setU( double u );
+public interface ColumnSubstitutorForGradient
+{
+    public UnivariatePolynomialVector3d setU(double u);
 }
