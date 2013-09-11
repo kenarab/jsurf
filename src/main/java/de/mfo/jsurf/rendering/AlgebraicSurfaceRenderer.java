@@ -16,13 +16,20 @@
 
 package de.mfo.jsurf.rendering;
 
-import de.mfo.jsurf.algebra.*;
-import de.mfo.jsurf.parser.*;
-import de.mfo.jsurf.util.BasicIO;
+import java.util.Map;
+import java.util.Set;
 
-import javax.vecmath.*;
+import javax.vecmath.Color3f;
+import javax.vecmath.Matrix4d;
 
-import java.util.*;
+import de.mfo.jsurf.algebra.DegreeCalculator;
+import de.mfo.jsurf.algebra.Differentiator;
+import de.mfo.jsurf.algebra.DoubleVariableExtractor;
+import de.mfo.jsurf.algebra.PolynomialOperation;
+import de.mfo.jsurf.algebra.PolynomialVariable;
+import de.mfo.jsurf.algebra.Simplificator;
+import de.mfo.jsurf.algebra.ToStringVisitor;
+import de.mfo.jsurf.parser.ParserService;
 
 public abstract class AlgebraicSurfaceRenderer
 {
@@ -95,7 +102,7 @@ public abstract class AlgebraicSurfaceRenderer
     public void setSurfaceFamily( String expression )
             throws Exception
     {
-        setSurfaceFamily( AlgebraicExpressionParser.parse( expression ), expression );
+        setSurfaceFamily( ParserService.parse( expression ), expression );
     }
 
     private void clearExpressionCache()

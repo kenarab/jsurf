@@ -21,14 +21,14 @@ public class PolynomialAddition implements PolynomialOperation
     public PolynomialOperation firstOperand;
     public PolynomialOperation secondOperand;
 
-    public PolynomialAddition(PolynomialOperation firstOperand, PolynomialOperation secondOperand)
+    public PolynomialAddition( PolynomialOperation firstOperand, PolynomialOperation secondOperand )
     {
-	this.firstOperand= firstOperand;
-	this.secondOperand= secondOperand;
+        this.firstOperand = firstOperand;
+        this.secondOperand = secondOperand;
     }
-
-    public <RETURN_TYPE, PARAM_TYPE> RETURN_TYPE accept(Visitor<RETURN_TYPE, PARAM_TYPE> visitor, PARAM_TYPE arg)
+    
+    public < RETURN_TYPE, PARAM_TYPE > RETURN_TYPE accept( Visitor< RETURN_TYPE, PARAM_TYPE > visitor, PARAM_TYPE arg )
     {
-	return visitor.visit(this, arg);
-    }
+        return visitor.visit( this, arg );
+    }    
 }

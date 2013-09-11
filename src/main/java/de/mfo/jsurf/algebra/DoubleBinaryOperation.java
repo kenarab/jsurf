@@ -18,24 +18,21 @@ package de.mfo.jsurf.algebra;
 
 public class DoubleBinaryOperation implements DoubleOperation
 {
-    public enum Op
-    {
-	add, sub, mult, div, pow, atan2;
-    }
-
+    public enum Op { add, sub, mult, div, pow, atan2; }
+    
     public Op operator;
     public DoubleOperation firstOperand;
     public DoubleOperation secondOperand;
-
-    public DoubleBinaryOperation(Op operator, DoubleOperation firstOperand, DoubleOperation secondOperand)
+    
+    public DoubleBinaryOperation( Op operator, DoubleOperation firstOperand, DoubleOperation secondOperand )
     {
-	this.operator= operator;
-	this.firstOperand= firstOperand;
-	this.secondOperand= secondOperand;
+        this.operator = operator;
+        this.firstOperand = firstOperand;
+        this.secondOperand = secondOperand;
     }
 
-    public <RETURN_TYPE, PARAM_TYPE> RETURN_TYPE accept(Visitor<RETURN_TYPE, PARAM_TYPE> visitor, PARAM_TYPE arg)
+    public < RETURN_TYPE, PARAM_TYPE > RETURN_TYPE accept( Visitor< RETURN_TYPE, PARAM_TYPE > visitor, PARAM_TYPE arg )
     {
-	return visitor.visit(this, arg);
+        return visitor.visit( this, arg );
     }
 }

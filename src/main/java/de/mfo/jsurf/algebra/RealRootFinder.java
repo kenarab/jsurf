@@ -23,8 +23,8 @@ public interface RealRootFinder
      * @param p
      * @return
      */
-    public double[] findAllRoots(UnivariatePolynomial p);
-
+    public double[] findAllRoots( UnivariatePolynomial p );
+    
     /**
      * Find all real roots of p within lowerBound and upperBound (bounds may or may not be included).
      * @param p
@@ -32,8 +32,8 @@ public interface RealRootFinder
      * @param upperBound
      * @return
      */
-    public double[] findAllRootsIn(UnivariatePolynomial p, double lowerBound, double upperBound);
-
+    public double[] findAllRootsIn( UnivariatePolynomial p, double lowerBound, double upperBound );
+    
     /**
      * Find the smallest real root of p within lowerBound and upperBound (bounds may or may not be included).
      * If no real root exists in this interval, Double.NaN ist returned.
@@ -42,5 +42,5 @@ public interface RealRootFinder
      * @param upperBound
      * @return
      */
-    public double findFirstRootIn(UnivariatePolynomial p, double lowerBound, double upperBound);
+    public double findFirstRootIn( UnivariatePolynomial p, double lowerBound, double upperBound );
 }

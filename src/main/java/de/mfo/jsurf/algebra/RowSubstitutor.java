@@ -16,7 +16,6 @@
 
 package de.mfo.jsurf.algebra;
 
-public interface RowSubstitutor
-{
-    public ColumnSubstitutor setV(double v);
+public interface RowSubstitutor {
+    public ColumnSubstitutor setV( double v );
 }
