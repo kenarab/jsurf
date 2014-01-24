@@ -19,14 +19,14 @@ package de.mfo.jsurf.algebra;
 public class PolynomialNegation implements PolynomialOperation
 {
     public PolynomialOperation operand;
-    
-    public PolynomialNegation( PolynomialOperation operand )
+
+    public PolynomialNegation(PolynomialOperation operand)
     {
-        this.operand = operand;
+	this.operand = operand;
     }
-    
-    public < RETURN_TYPE, PARAM_TYPE > RETURN_TYPE accept( Visitor< RETURN_TYPE, PARAM_TYPE > visitor, PARAM_TYPE arg )
+
+    public <RETURN_TYPE, PARAM_TYPE> RETURN_TYPE accept(Visitor<RETURN_TYPE, PARAM_TYPE> visitor, PARAM_TYPE arg)
     {
-        return visitor.visit( this, arg );
+	return visitor.visit(this, arg);
     }
 }

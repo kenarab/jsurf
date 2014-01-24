@@ -16,4 +16,6 @@
 
 package de.mfo.jsurf.algebra;
 
-public interface DoubleOperation extends PolynomialOperation {}
+public interface DoubleOperation extends PolynomialOperation
+{
+}

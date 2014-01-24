@@ -27,22 +27,22 @@ class DrawcallStaticData
     int[] colorBuffer;
     int width;
     int height;
-    
+
     CoefficientCalculator coefficientCalculator;
     RowSubstitutor surfaceRowSubstitutor;
     RowSubstitutorForGradient gradientRowSubstitutor;
     RealRootFinder realRootFinder;
-    
+
     LightSource[] lightSources;
     Color3f frontAmbientColor;
     Color3f backAmbientColor;
     LightProducts[] frontLightProducts;
     LightProducts[] backLightProducts;
     Color3f backgroundColor;
-    
+
     AntiAliasingPattern antiAliasingPattern;
     float antiAliasingThreshold;
-    
+
     RayCreator rayCreator;
     Clipper rayClipper;
 }

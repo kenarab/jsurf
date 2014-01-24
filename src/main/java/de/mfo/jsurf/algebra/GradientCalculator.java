@@ -25,12 +25,12 @@ public interface GradientCalculator
      * @param p Point in surface space.
      * @return Surface normal in surface space.
      */
-    public Vector3d calculateGradient( Point3d p );
-    
+    public Vector3d calculateGradient(Point3d p);
+
     /**
      * Calculates the surface normal in surface space.
      * @param p Point in surface space.
      * @return Surface normal in surface space.
      */
-    public Vector3f calculateGradient( Point3f p );
+    public Vector3f calculateGradient(Point3f p);
 }

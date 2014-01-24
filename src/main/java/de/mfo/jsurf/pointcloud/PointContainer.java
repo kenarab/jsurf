@@ -20,5 +20,5 @@ import javax.vecmath.*;
 
 public interface PointContainer
 {
-    public void add( Point3d p, Vector3d normal );
+    public void add(Point3d p, Vector3d normal);
 }

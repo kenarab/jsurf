@@ -18,9 +18,12 @@ package de.mfo.jsurf.debug;
 
 import java.awt.*;
 
-public class Globals {
+public class Globals
+{
     public static Point mousePos;
     public static boolean pause = false;
-    
-    public static void dummy() {}
+
+    public static void dummy()
+    {
+    }
 }

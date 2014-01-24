@@ -16,6 +16,7 @@
 
 package de.mfo.jsurf.algebra;
 
-public interface ColumnSubstitutor {
-    public UnivariatePolynomial setU( double u );
+public interface ColumnSubstitutor
+{
+    public UnivariatePolynomial setU(double u);
 }

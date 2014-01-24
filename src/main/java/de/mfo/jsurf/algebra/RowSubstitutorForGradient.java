@@ -20,6 +20,7 @@ package de.mfo.jsurf.algebra;
  *
  * @author stussak
  */
-public interface RowSubstitutorForGradient {
-    public ColumnSubstitutorForGradient setV( double v );
+public interface RowSubstitutorForGradient
+{
+    public ColumnSubstitutorForGradient setV(double v);
 }

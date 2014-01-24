@@ -21,7 +21,10 @@ import javax.vecmath.*;
 public interface Exporter
 {
     public void startExport();
-    public void export( Point3d p, Vector3d normal );
-    public void exportBBox( double size );
+
+    public void export(Point3d p, Vector3d normal);
+
+    public void exportBBox(double size);
+
     public void finishExport();
 }
