@@ -83,7 +83,7 @@ public class Main
 
 	CommandLineParser parser = new PosixParser();
 	HelpFormatter formatter = new HelpFormatter();
-	String cmd_line_syntax = "jsurf [options] jsurf_file1";
+	String cmd_line_syntax = "jsurf [options] jsurf_file";
 	String help_header = "jsurf is a renderer for algebraic surfaces. If - is specified as a filename the jsurf file is read from standard input. " + "Use ./- to denote a file literally named -.";
 	String help_footer = "";
 	try
