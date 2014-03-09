@@ -34,6 +34,10 @@ import de.mfo.jsurf.util.FileFormat;
 
 public class Main
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> ae21e7714c6a385ce00e4031b769abb6e9869b67
     static int size = 100;
     static AntiAliasingMode aam;
     static AntiAliasingPattern aap;
@@ -42,6 +46,7 @@ public class Main
     protected static String output_filename;
     protected static int quality;
 
+<<<<<<< HEAD
     /**
      * @param args
      */
@@ -66,6 +71,36 @@ public class Main
     {
 	String jsurf_filename = "";
 	output_filename = null;
+=======
+    static BufferedImage createBufferedImageFromRGB(ImgBuffer ib)
+    {
+	int w = ib.width;
+	int h = ib.height;
+
+	DirectColorModel colormodel = new DirectColorModel(24, 0xff0000, 0xff00, 0xff);
+	SampleModel sampleModel = colormodel.createCompatibleSampleModel(w, h);
+	DataBufferInt data = new DataBufferInt(ib.rgbBuffer, w * h);
+	WritableRaster raster = WritableRaster.createWritableRaster(sampleModel, data, new Point(0, 0));
+	return new BufferedImage(colormodel, raster, false, null);
+    }
+
+    public static BufferedImage flipV(BufferedImage bi)
+    {
+	AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
+	tx.translate(0, -bi.getHeight(null));
+	AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+	return op.filter(bi, null);
+    }
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args)
+    {
+
+	String jsurf_filename = "";
+	String output_filename = null;
+>>>>>>> ae21e7714c6a385ce00e4031b769abb6e9869b67
 
 	Options options = new Options();
 
@@ -87,7 +122,11 @@ public class Main
 	    else
 	    {
 		formatter.printHelp(cmd_line_syntax, help_header, options, help_footer);
+<<<<<<< HEAD
 		System.exit(-1);
+=======
+		return;
+>>>>>>> ae21e7714c6a385ce00e4031b769abb6e9869b67
 	    }
 
 	    if (cmd.hasOption("output"))
@@ -96,10 +135,16 @@ public class Main
 	    if (cmd.hasOption("size"))
 		size = Integer.parseInt(cmd.getOptionValue("size"));
 
+<<<<<<< HEAD
 	    quality = 1;
 	    if (cmd.hasOption("quality"))
 		quality = Integer.parseInt(cmd.getOptionValue("quality"));
 
+=======
+	    int quality = 1;
+	    if (cmd.hasOption("quality"))
+		quality = Integer.parseInt(cmd.getOptionValue("quality"));
+>>>>>>> ae21e7714c6a385ce00e4031b769abb6e9869b67
 	    switch (quality)
 	    {
 		case 0:
@@ -128,6 +173,7 @@ public class Main
 	{
 	    formatter.printHelp(cmd_line_syntax, help_header, options, help_footer);
 	    System.exit(-1);
+<<<<<<< HEAD
 	}
 
 	try
@@ -145,6 +191,81 @@ public class Main
 	}
 
 	return jsurf_filename;
+=======
+	}
+
+	try
+	{
+	    Properties jsurf = new Properties();
+	    if (jsurf_filename.equals("-"))
+		jsurf.load(System.in);
+	    else
+		jsurf.load(new FileReader(jsurf_filename));
+	    FileFormat.load(jsurf, asr);
+	}
+	catch (Exception e)
+	{
+	    System.err.println("Unable to read jsurf file " + jsurf_filename);
+	    e.printStackTrace();
+	    System.exit(-2);
+	}
+
+	asr.setAntiAliasingMode(aam);
+	asr.setAntiAliasingPattern(aap);
+
+	BufferedImage bi = null;
+	try
+	{
+	    ImgBuffer ib = new ImgBuffer(size, size);
+	    asr.draw(ib.rgbBuffer, size, size);
+	    bi = flipV(createBufferedImageFromRGB(ib));
+
+	}
+	catch (Exception e)
+	{
+	    System.err.println("An error occurred during rendering.");
+	    e.printStackTrace();
+	    System.exit(-3);
+	}
+
+	if (output_filename != null)
+	{
+	    // save to file
+	    try
+	    {
+		OutputStream os;
+		if (output_filename.equals("-"))
+		    os = System.out;
+		else
+		    os = new FileOutputStream(new File(output_filename));
+		javax.imageio.ImageIO.write(bi, "png", os);
+	    }
+	    catch (Exception e)
+	    {
+		System.err.println("Unable to save to file  " + output_filename);
+		e.printStackTrace();
+		System.exit(-4);
+	    }
+	}
+	else
+	{
+	    // display the image in a window 
+	    final String window_title = "jsurf: " + jsurf_filename;
+	    final BufferedImage window_image = bi;
+	    SwingUtilities.invokeLater(new Runnable()
+	    {
+		public void run()
+		{
+		    JFrame f = new JFrame(window_title);
+		    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		    f.getContentPane().add(new JLabel(new ImageIcon(window_image)));
+		    f.pack();
+		    f.setResizable(false);
+		    f.setVisible(true);
+		}
+	    });
+	}
+>>>>>>> ae21e7714c6a385ce00e4031b769abb6e9869b67
     }
 }
 
