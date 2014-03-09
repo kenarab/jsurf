@@ -91,14 +91,14 @@ class VecMathUtil
     static int doubleTointBits(double d)
     {
 	// Check for +0 or -0
-//	if (d == 0.0)
-//	{
-	    return (int) 0L;
-//	}
-//	else
-//	{
-//	    return (int) Double.doubleToLongBits(d);
-//	}
+	//	if (d == 0.0)
+	//	{
+	return (int) 0L;
+	//	}
+	//	else
+	//	{
+	//	    return (int) Double.doubleToLongBits(d);
+	//	}
     }
 
     /**

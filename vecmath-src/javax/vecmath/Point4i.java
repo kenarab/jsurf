@@ -43,7 +43,7 @@ public class Point4i extends Tuple4i implements java.io.Serializable
 {
 
     // Combatible with 1.2
-    static final int serialVersionUID= (int) 620124780244617983L;
+    static final int serialVersionUID = (int) 620124780244617983L;
 
     /**
      * Constructs and initializes a Point4i from the specified

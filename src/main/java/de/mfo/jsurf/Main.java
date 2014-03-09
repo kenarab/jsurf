@@ -34,11 +34,11 @@ import de.mfo.jsurf.util.FileFormat;
 
 public class Main
 {
-    static int size= 100;
+    static int size = 100;
     static AntiAliasingMode aam;
     static AntiAliasingPattern aap;
 
-    static CPUAlgebraicSurfaceRenderer asr= new CPUAlgebraicSurfaceRenderer();
+    static CPUAlgebraicSurfaceRenderer asr = new CPUAlgebraicSurfaceRenderer();
     protected static String output_filename;
     protected static int quality;
 
@@ -47,43 +47,43 @@ public class Main
      */
     public static void main(String[] args) throws Exception
     {
-	Properties jsurf= new Properties();
-	String jsurf_filename= readCommandLine(args, jsurf);
+	Properties jsurf = new Properties();
+	String jsurf_filename = readCommandLine(args, jsurf);
 
 	FileFormat.load(jsurf, asr);
 
 	asr.setAntiAliasingMode(aam);
 	asr.setAntiAliasingPattern(aap);
 
-	ImgBuffer ib= new ImgBuffer(size, size);
+	ImgBuffer ib = new ImgBuffer(size, size);
 	asr.draw(ib.rgbBuffer, size, size);
-	
-	BufferedImageGenerator imageGenerator= new BufferedImageGenerator(size, jsurf_filename, output_filename);
+
+	BufferedImageGenerator imageGenerator = new BufferedImageGenerator(size, jsurf_filename, output_filename);
 	imageGenerator.draw(ib, size);
     }
 
     private static String readCommandLine(String[] args, Properties jsurf)
     {
-	String jsurf_filename= "";
-	output_filename= null;
+	String jsurf_filename = "";
+	output_filename = null;
 
-	Options options= new Options();
+	Options options = new Options();
 
 	options.addOption("s", "size", true, "width (and height) of a image (default: " + size + ")");
 	options.addOption("q", "quality", true, "quality of the rendering: 0 (low), 1 (medium, default), 2 (high), 3 (extreme)");
 	options.addOption("o", "output", true, "output PNG into this file (- means standard output. Use ./- to denote a file literally named -.)");
 
-	CommandLineParser parser= new PosixParser();
-	HelpFormatter formatter= new HelpFormatter();
-	String cmd_line_syntax= "jsurf [options] jsurf_file";
-	String help_header= "jsurf is a renderer for algebraic surfaces. If - is specified as a filename the jsurf file is read from standard input. " + "Use ./- to denote a file literally named -.";
-	String help_footer= "";
+	CommandLineParser parser = new PosixParser();
+	HelpFormatter formatter = new HelpFormatter();
+	String cmd_line_syntax = "jsurf [options] jsurf_file";
+	String help_header = "jsurf is a renderer for algebraic surfaces. If - is specified as a filename the jsurf file is read from standard input. " + "Use ./- to denote a file literally named -.";
+	String help_footer = "";
 	try
 	{
-	    CommandLine cmd= parser.parse(options, args);
+	    CommandLine cmd = parser.parse(options, args);
 
 	    if (cmd.getArgs().length > 0)
-		jsurf_filename= cmd.getArgs()[0];
+		jsurf_filename = cmd.getArgs()[0];
 	    else
 	    {
 		formatter.printHelp(cmd_line_syntax, help_header, options, help_footer);
@@ -91,32 +91,32 @@ public class Main
 	    }
 
 	    if (cmd.hasOption("output"))
-		output_filename= cmd.getOptionValue("output");
+		output_filename = cmd.getOptionValue("output");
 
 	    if (cmd.hasOption("size"))
-		size= Integer.parseInt(cmd.getOptionValue("size"));
+		size = Integer.parseInt(cmd.getOptionValue("size"));
 
-	    quality= 1;
+	    quality = 1;
 	    if (cmd.hasOption("quality"))
-		quality= Integer.parseInt(cmd.getOptionValue("quality"));
+		quality = Integer.parseInt(cmd.getOptionValue("quality"));
 
 	    switch (quality)
 	    {
 		case 0:
-		    aam= AntiAliasingMode.ADAPTIVE_SUPERSAMPLING;
-		    aap= AntiAliasingPattern.OG_1x1;
+		    aam = AntiAliasingMode.ADAPTIVE_SUPERSAMPLING;
+		    aap = AntiAliasingPattern.OG_1x1;
 		    break;
 		case 2:
-		    aam= AntiAliasingMode.ADAPTIVE_SUPERSAMPLING;
-		    aap= AntiAliasingPattern.OG_4x4;
+		    aam = AntiAliasingMode.ADAPTIVE_SUPERSAMPLING;
+		    aap = AntiAliasingPattern.OG_4x4;
 		    break;
 		case 3:
-		    aam= AntiAliasingMode.SUPERSAMPLING;
-		    aap= AntiAliasingPattern.OG_4x4;
+		    aam = AntiAliasingMode.SUPERSAMPLING;
+		    aap = AntiAliasingPattern.OG_4x4;
 		    break;
 		case 1:
-		    aam= AntiAliasingMode.ADAPTIVE_SUPERSAMPLING;
-		    aap= AntiAliasingPattern.QUINCUNX;
+		    aam = AntiAliasingMode.ADAPTIVE_SUPERSAMPLING;
+		    aap = AntiAliasingPattern.QUINCUNX;
 	    }
 	}
 	catch (ParseException exp)
@@ -156,8 +156,8 @@ class ImgBuffer
 
     public ImgBuffer(int w, int h)
     {
-	rgbBuffer= new int[3 * w * h];
-	width= w;
-	height= h;
+	rgbBuffer = new int[3 * w * h];
+	width = w;
+	height = h;
     }
 }

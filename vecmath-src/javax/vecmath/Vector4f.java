@@ -42,7 +42,7 @@ public class Vector4f extends Tuple4f implements java.io.Serializable
 {
 
     // Compatible with 1.1
-    static final int serialVersionUID= (int) 8749319902347760659L;
+    static final int serialVersionUID = (int) 8749319902347760659L;
 
     /**
      * Constructs and initializes a Vector4f from the specified xyzw coordinates.
@@ -133,10 +133,10 @@ public class Vector4f extends Tuple4f implements java.io.Serializable
      */
     public final void set(Tuple3f t1)
     {
-	this.x= t1.x;
-	this.y= t1.y;
-	this.z= t1.z;
-	this.w= 0.0f;
+	this.x = t1.x;
+	this.y = t1.y;
+	this.z = t1.z;
+	this.w = 0.0f;
     }
 
     /**
@@ -175,11 +175,11 @@ public class Vector4f extends Tuple4f implements java.io.Serializable
     {
 	float norm;
 
-	norm= (float) (1.0 / Math.sqrt(v1.x * v1.x + v1.y * v1.y + v1.z * v1.z + v1.w * v1.w));
-	this.x= v1.x * norm;
-	this.y= v1.y * norm;
-	this.z= v1.z * norm;
-	this.w= v1.w * norm;
+	norm = (float) (1.0 / Math.sqrt(v1.x * v1.x + v1.y * v1.y + v1.z * v1.z + v1.w * v1.w));
+	this.x = v1.x * norm;
+	this.y = v1.y * norm;
+	this.z = v1.z * norm;
+	this.w = v1.w * norm;
     }
 
     /**
@@ -189,11 +189,11 @@ public class Vector4f extends Tuple4f implements java.io.Serializable
     {
 	float norm;
 
-	norm= (float) (1.0 / Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z + this.w * this.w));
-	this.x*= norm;
-	this.y*= norm;
-	this.z*= norm;
-	this.w*= norm;
+	norm = (float) (1.0 / Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z + this.w * this.w));
+	this.x *= norm;
+	this.y *= norm;
+	this.z *= norm;
+	this.w *= norm;
     }
 
     /** 
@@ -205,11 +205,11 @@ public class Vector4f extends Tuple4f implements java.io.Serializable
       */
     public final float angle(Vector4f v1)
     {
-	double vDot= this.dot(v1) / (this.length() * v1.length());
+	double vDot = this.dot(v1) / (this.length() * v1.length());
 	if (vDot < -1.0)
-	    vDot= -1.0;
+	    vDot = -1.0;
 	if (vDot > 1.0)
-	    vDot= 1.0;
+	    vDot = 1.0;
 	return ((float) (Math.acos(vDot)));
     }
 

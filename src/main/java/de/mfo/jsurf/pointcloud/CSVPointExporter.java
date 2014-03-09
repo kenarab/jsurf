@@ -22,25 +22,28 @@ import java.io.*;
 public class CSVPointExporter implements Exporter
 {
     PrintStream ps;
-    
-    public CSVPointExporter( File file )
-        throws IOException
+
+    public CSVPointExporter(File file) throws IOException
     {
-        ps = new PrintStream( new FileOutputStream( file ) );
+	ps = new PrintStream(new FileOutputStream(file));
     }
-    
-    public void startExport() {}
-    
-    public void export( Point3d p, Vector3d normal )
+
+    public void startExport()
     {
-        ps.println( p.x + "," + p.y + "," + p.z );
     }
-    
-    public void exportBBox( double size ) {}
-    
+
+    public void export(Point3d p, Vector3d normal)
+    {
+	ps.println(p.x + "," + p.y + "," + p.z);
+    }
+
+    public void exportBBox(double size)
+    {
+    }
+
     public void finishExport()
     {
-        ps.flush();
-        ps.close();
-    }    
+	ps.flush();
+	ps.close();
+    }
 }

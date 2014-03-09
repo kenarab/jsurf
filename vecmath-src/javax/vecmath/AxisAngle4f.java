@@ -43,7 +43,7 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
 {
 
     // Compatible with 1.1
-    static final int serialVersionUID= (int) -163246355858070601L;
+    static final int serialVersionUID = (int) -163246355858070601L;
 
     /**
      * The x coordinate.
@@ -65,7 +65,7 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public float angle;
 
-    final static double EPS= 0.000001;
+    final static double EPS = 0.000001;
 
     /**
      * Constructs and initializes a AxisAngle4f from the specified xyzw coordinates.
@@ -76,10 +76,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public AxisAngle4f(float x, float y, float z, float angle)
     {
-	this.x= x;
-	this.y= y;
-	this.z= z;
-	this.angle= angle;
+	this.x = x;
+	this.y = y;
+	this.z = z;
+	this.angle = angle;
     }
 
     /**
@@ -88,10 +88,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public AxisAngle4f(float[] a)
     {
-	this.x= a[0];
-	this.y= a[1];
-	this.z= a[2];
-	this.angle= a[3];
+	this.x = a[0];
+	this.y = a[1];
+	this.z = a[2];
+	this.angle = a[3];
     }
 
     /**
@@ -101,10 +101,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public AxisAngle4f(AxisAngle4f a1)
     {
-	this.x= a1.x;
-	this.y= a1.y;
-	this.z= a1.z;
-	this.angle= a1.angle;
+	this.x = a1.x;
+	this.y = a1.y;
+	this.z = a1.z;
+	this.angle = a1.angle;
     }
 
     /**
@@ -113,10 +113,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public AxisAngle4f(AxisAngle4d a1)
     {
-	this.x= (float) a1.x;
-	this.y= (float) a1.y;
-	this.z= (float) a1.z;
-	this.angle= (float) a1.angle;
+	this.x = (float) a1.x;
+	this.y = (float) a1.y;
+	this.z = (float) a1.z;
+	this.angle = (float) a1.angle;
     }
 
     /**
@@ -129,10 +129,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public AxisAngle4f(Vector3f axis, float angle)
     {
-	this.x= axis.x;
-	this.y= axis.y;
-	this.z= axis.z;
-	this.angle= angle;
+	this.x = axis.x;
+	this.y = axis.y;
+	this.z = axis.z;
+	this.angle = angle;
     }
 
     /**
@@ -140,10 +140,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public AxisAngle4f()
     {
-	this.x= 0.0f;
-	this.y= 0.0f;
-	this.z= 1.0f;
-	this.angle= 0.0f;
+	this.x = 0.0f;
+	this.y = 0.0f;
+	this.z = 1.0f;
+	this.angle = 0.0f;
     }
 
     /**
@@ -155,10 +155,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void set(float x, float y, float z, float angle)
     {
-	this.x= x;
-	this.y= y;
-	this.z= z;
-	this.angle= angle;
+	this.x = x;
+	this.y = y;
+	this.z = z;
+	this.angle = angle;
     }
 
     /**
@@ -168,10 +168,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void set(float[] a)
     {
-	this.x= a[0];
-	this.y= a[1];
-	this.z= a[2];
-	this.angle= a[3];
+	this.x = a[0];
+	this.y = a[1];
+	this.z = a[2];
+	this.angle = a[3];
     }
 
     /**
@@ -180,10 +180,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void set(AxisAngle4f a1)
     {
-	this.x= a1.x;
-	this.y= a1.y;
-	this.z= a1.z;
-	this.angle= a1.angle;
+	this.x = a1.x;
+	this.y = a1.y;
+	this.z = a1.z;
+	this.angle = a1.angle;
     }
 
     /**
@@ -192,10 +192,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void set(AxisAngle4d a1)
     {
-	this.x= (float) a1.x;
-	this.y= (float) a1.y;
-	this.z= (float) a1.z;
-	this.angle= (float) a1.angle;
+	this.x = (float) a1.x;
+	this.y = (float) a1.y;
+	this.z = (float) a1.z;
+	this.angle = (float) a1.angle;
     }
 
     /**
@@ -208,10 +208,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void set(Vector3f axis, float angle)
     {
-	this.x= axis.x;
-	this.y= axis.y;
-	this.z= axis.z;
-	this.angle= angle;
+	this.x = axis.x;
+	this.y = axis.y;
+	this.z = axis.z;
+	this.angle = angle;
     }
 
     /**
@@ -220,10 +220,10 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void get(float[] a)
     {
-	a[0]= this.x;
-	a[1]= this.y;
-	a[2]= this.z;
-	a[3]= this.angle;
+	a[0] = this.x;
+	a[1] = this.y;
+	a[2] = this.z;
+	a[3] = this.angle;
     }
 
     /**
@@ -235,24 +235,24 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
       */
     public final void set(Quat4f q1)
     {
-	double mag= q1.x * q1.x + q1.y * q1.y + q1.z * q1.z;
+	double mag = q1.x * q1.x + q1.y * q1.y + q1.z * q1.z;
 
 	if (mag > EPS)
 	{
-	    mag= Math.sqrt(mag);
-	    double invMag= 1.0 / mag;
+	    mag = Math.sqrt(mag);
+	    double invMag = 1.0 / mag;
 
-	    x= (float) (q1.x * invMag);
-	    y= (float) (q1.y * invMag);
-	    z= (float) (q1.z * invMag);
-	    angle= (float) (2.0 * Math.atan2(mag, q1.w));
+	    x = (float) (q1.x * invMag);
+	    y = (float) (q1.y * invMag);
+	    z = (float) (q1.z * invMag);
+	    angle = (float) (2.0 * Math.atan2(mag, q1.w));
 	}
 	else
 	{
-	    x= 0.0f;
-	    y= 1.0f;
-	    z= 0.0f;
-	    angle= 0.0f;
+	    x = 0.0f;
+	    y = 1.0f;
+	    z = 0.0f;
+	    angle = 0.0f;
 	}
     }
 
@@ -265,24 +265,24 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
       */
     public final void set(Quat4d q1)
     {
-	double mag= q1.x * q1.x + q1.y * q1.y + q1.z * q1.z;
+	double mag = q1.x * q1.x + q1.y * q1.y + q1.z * q1.z;
 
 	if (mag > EPS)
 	{
-	    mag= Math.sqrt(mag);
-	    double invMag= 1.0 / mag;
+	    mag = Math.sqrt(mag);
+	    double invMag = 1.0 / mag;
 
-	    x= (float) (q1.x * invMag);
-	    y= (float) (q1.y * invMag);
-	    z= (float) (q1.z * invMag);
-	    angle= (float) (2.0 * Math.atan2(mag, q1.w));
+	    x = (float) (q1.x * invMag);
+	    y = (float) (q1.y * invMag);
+	    z = (float) (q1.z * invMag);
+	    angle = (float) (2.0 * Math.atan2(mag, q1.w));
 	}
 	else
 	{
-	    x= 0.0f;
-	    y= 1.0f;
-	    z= 0.0f;
-	    angle= 0.0f;
+	    x = 0.0f;
+	    y = 1.0f;
+	    z = 0.0f;
+	    angle = 0.0f;
 	}
     }
 
@@ -295,33 +295,33 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void set(Matrix4f m1)
     {
-	Matrix3f m3f= new Matrix3f();
+	Matrix3f m3f = new Matrix3f();
 
 	m1.get(m3f);
 
-	x= m3f.m21 - m3f.m12;
-	y= m3f.m02 - m3f.m20;
-	z= m3f.m10 - m3f.m01;
-	double mag= x * x + y * y + z * z;
+	x = m3f.m21 - m3f.m12;
+	y = m3f.m02 - m3f.m20;
+	z = m3f.m10 - m3f.m01;
+	double mag = x * x + y * y + z * z;
 
 	if (mag > EPS)
 	{
-	    mag= Math.sqrt(mag);
-	    double sin= 0.5 * mag;
-	    double cos= 0.5 * (m3f.m00 + m3f.m11 + m3f.m22 - 1.0);
+	    mag = Math.sqrt(mag);
+	    double sin = 0.5 * mag;
+	    double cos = 0.5 * (m3f.m00 + m3f.m11 + m3f.m22 - 1.0);
 
-	    angle= (float) Math.atan2(sin, cos);
-	    double invMag= 1.0 / mag;
-	    x= (float) (x * invMag);
-	    y= (float) (y * invMag);
-	    z= (float) (z * invMag);
+	    angle = (float) Math.atan2(sin, cos);
+	    double invMag = 1.0 / mag;
+	    x = (float) (x * invMag);
+	    y = (float) (y * invMag);
+	    z = (float) (z * invMag);
 	}
 	else
 	{
-	    x= 0.0f;
-	    y= 1.0f;
-	    z= 0.0f;
-	    angle= 0.0f;
+	    x = 0.0f;
+	    y = 1.0f;
+	    z = 0.0f;
+	    angle = 0.0f;
 	}
 
     }
@@ -335,33 +335,33 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void set(Matrix4d m1)
     {
-	Matrix3d m3d= new Matrix3d();
+	Matrix3d m3d = new Matrix3d();
 
 	m1.get(m3d);
 
-	x= (float) (m3d.m21 - m3d.m12);
-	y= (float) (m3d.m02 - m3d.m20);
-	z= (float) (m3d.m10 - m3d.m01);
-	double mag= x * x + y * y + z * z;
+	x = (float) (m3d.m21 - m3d.m12);
+	y = (float) (m3d.m02 - m3d.m20);
+	z = (float) (m3d.m10 - m3d.m01);
+	double mag = x * x + y * y + z * z;
 
 	if (mag > EPS)
 	{
-	    mag= Math.sqrt(mag);
-	    double sin= 0.5 * mag;
-	    double cos= 0.5 * (m3d.m00 + m3d.m11 + m3d.m22 - 1.0);
-	    angle= (float) Math.atan2(sin, cos);
+	    mag = Math.sqrt(mag);
+	    double sin = 0.5 * mag;
+	    double cos = 0.5 * (m3d.m00 + m3d.m11 + m3d.m22 - 1.0);
+	    angle = (float) Math.atan2(sin, cos);
 
-	    double invMag= 1.0 / mag;
-	    x= (float) (x * invMag);
-	    y= (float) (y * invMag);
-	    z= (float) (z * invMag);
+	    double invMag = 1.0 / mag;
+	    x = (float) (x * invMag);
+	    y = (float) (y * invMag);
+	    z = (float) (z * invMag);
 	}
 	else
 	{
-	    x= 0.0f;
-	    y= 1.0f;
-	    z= 0.0f;
-	    angle= 0.0f;
+	    x = 0.0f;
+	    y = 1.0f;
+	    z = 0.0f;
+	    angle = 0.0f;
 	}
 
     }
@@ -375,29 +375,29 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void set(Matrix3f m1)
     {
-	x= (float) (m1.m21 - m1.m12);
-	y= (float) (m1.m02 - m1.m20);
-	z= (float) (m1.m10 - m1.m01);
-	double mag= x * x + y * y + z * z;
+	x = (float) (m1.m21 - m1.m12);
+	y = (float) (m1.m02 - m1.m20);
+	z = (float) (m1.m10 - m1.m01);
+	double mag = x * x + y * y + z * z;
 	if (mag > EPS)
 	{
-	    mag= Math.sqrt(mag);
-	    double sin= 0.5 * mag;
-	    double cos= 0.5 * (m1.m00 + m1.m11 + m1.m22 - 1.0);
+	    mag = Math.sqrt(mag);
+	    double sin = 0.5 * mag;
+	    double cos = 0.5 * (m1.m00 + m1.m11 + m1.m22 - 1.0);
 
-	    angle= (float) Math.atan2(sin, cos);
+	    angle = (float) Math.atan2(sin, cos);
 
-	    double invMag= 1.0 / mag;
-	    x= (float) (x * invMag);
-	    y= (float) (y * invMag);
-	    z= (float) (z * invMag);
+	    double invMag = 1.0 / mag;
+	    x = (float) (x * invMag);
+	    y = (float) (y * invMag);
+	    z = (float) (z * invMag);
 	}
 	else
 	{
-	    x= 0.0f;
-	    y= 1.0f;
-	    z= 0.0f;
-	    angle= 0.0f;
+	    x = 0.0f;
+	    y = 1.0f;
+	    z = 0.0f;
+	    angle = 0.0f;
 	}
 
     }
@@ -412,30 +412,30 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
     public final void set(Matrix3d m1)
     {
 
-	x= (float) (m1.m21 - m1.m12);
-	y= (float) (m1.m02 - m1.m20);
-	z= (float) (m1.m10 - m1.m01);
-	double mag= x * x + y * y + z * z;
+	x = (float) (m1.m21 - m1.m12);
+	y = (float) (m1.m02 - m1.m20);
+	z = (float) (m1.m10 - m1.m01);
+	double mag = x * x + y * y + z * z;
 
 	if (mag > EPS)
 	{
-	    mag= Math.sqrt(mag);
-	    double sin= 0.5 * mag;
-	    double cos= 0.5 * (m1.m00 + m1.m11 + m1.m22 - 1.0);
+	    mag = Math.sqrt(mag);
+	    double sin = 0.5 * mag;
+	    double cos = 0.5 * (m1.m00 + m1.m11 + m1.m22 - 1.0);
 
-	    angle= (float) Math.atan2(sin, cos);
+	    angle = (float) Math.atan2(sin, cos);
 
-	    double invMag= 1.0 / mag;
-	    x= (float) (x * invMag);
-	    y= (float) (y * invMag);
-	    z= (float) (z * invMag);
+	    double invMag = 1.0 / mag;
+	    x = (float) (x * invMag);
+	    y = (float) (y * invMag);
+	    z = (float) (z * invMag);
 	}
 	else
 	{
-	    x= 0.0f;
-	    y= 1.0f;
-	    z= 0.0f;
-	    angle= 0.0f;
+	    x = 0.0f;
+	    y = 1.0f;
+	    z = 0.0f;
+	    angle = 0.0f;
 	}
     }
 
@@ -479,7 +479,7 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
     {
 	try
 	{
-	    AxisAngle4f a2= (AxisAngle4f) o1;
+	    AxisAngle4f a2 = (AxisAngle4f) o1;
 	    return (this.x == a2.x && this.y == a2.y && this.z == a2.z && this.angle == a2.angle);
 	}
 	catch (NullPointerException e2)
@@ -506,27 +506,25 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
     {
 	float diff;
 
-	diff= x - a1.x;
+	diff = x - a1.x;
 	if ((diff < 0 ? -diff : diff) > epsilon)
 	    return false;
 
-	diff= y - a1.y;
+	diff = y - a1.y;
 	if ((diff < 0 ? -diff : diff) > epsilon)
 	    return false;
 
-	diff= z - a1.z;
+	diff = z - a1.z;
 	if ((diff < 0 ? -diff : diff) > epsilon)
 	    return false;
 
-	diff= angle - a1.angle;
+	diff = angle - a1.angle;
 	if ((diff < 0 ? -diff : diff) > epsilon)
 	    return false;
 
 	return true;
 
     }
-
-    
 
     /**
      * Creates a new object of the same class as this object.
@@ -569,7 +567,7 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void setAngle(float angle)
     {
-	this.angle= angle;
+	this.angle = angle;
     }
 
     /**
@@ -593,7 +591,7 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void setX(float x)
     {
-	this.x= x;
+	this.x = x;
     }
 
     /**
@@ -617,7 +615,7 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void setY(float y)
     {
-	this.y= y;
+	this.y = y;
     }
 
     /**
@@ -641,7 +639,7 @@ public class AxisAngle4f implements java.io.Serializable, Cloneable
      */
     public final void setZ(float z)
     {
-	this.z= z;
+	this.z = z;
     }
 
 }

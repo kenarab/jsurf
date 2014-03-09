@@ -42,7 +42,7 @@ public class Point2d extends Tuple2d implements java.io.Serializable
 {
 
     // Compatible with 1.1
-    static final int serialVersionUID= (int) 1133748791492571954L;
+    static final int serialVersionUID = (int) 1133748791492571954L;
 
     /**
      * Constructs and initializes a Point2d from the specified xy coordinates.
@@ -115,8 +115,8 @@ public class Point2d extends Tuple2d implements java.io.Serializable
     {
 	double dx, dy;
 
-	dx= this.x - p1.x;
-	dy= this.y - p1.y;
+	dx = this.x - p1.x;
+	dy = this.y - p1.y;
 	return dx * dx + dy * dy;
     }
 
@@ -128,8 +128,8 @@ public class Point2d extends Tuple2d implements java.io.Serializable
     {
 	double dx, dy;
 
-	dx= this.x - p1.x;
-	dy= this.y - p1.y;
+	dx = this.x - p1.x;
+	dy = this.y - p1.y;
 	return Math.sqrt(dx * dx + dy * dy);
     }
 

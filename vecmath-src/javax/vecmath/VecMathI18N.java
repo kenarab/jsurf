@@ -41,7 +41,7 @@ class VecMathI18N
 	//	}
 	//	catch (MissingResourceException e) {
 	//	    System.err.println("VecMathI18N: Error looking up: " + key);
-	s= key;
+	s = key;
 	//	}
 	return s;
     }

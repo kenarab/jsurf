@@ -18,19 +18,22 @@ package de.mfo.jsurf.algebra;
 
 public class DoubleUnaryOperation implements DoubleOperation
 {
-    public enum Op { neg, sin, cos, tan, asin, acos, atan, exp, log, sqrt, ceil, floor, abs, sign; }
-    
+    public enum Op
+    {
+	neg, sin, cos, tan, asin, acos, atan, exp, log, sqrt, ceil, floor, abs, sign;
+    }
+
     public Op operator;
     public DoubleOperation operand;
-    
-    public DoubleUnaryOperation( Op operator, DoubleOperation operand )
+
+    public DoubleUnaryOperation(Op operator, DoubleOperation operand)
     {
-        this.operator = operator;
-        this.operand = operand;
+	this.operator = operator;
+	this.operand = operand;
     }
-    
-    public < RETURN_TYPE, PARAM_TYPE > RETURN_TYPE accept( Visitor< RETURN_TYPE, PARAM_TYPE > visitor, PARAM_TYPE arg )
+
+    public <RETURN_TYPE, PARAM_TYPE> RETURN_TYPE accept(Visitor<RETURN_TYPE, PARAM_TYPE> visitor, PARAM_TYPE arg)
     {
-        return visitor.visit( this, arg );
+	return visitor.visit(this, arg);
     }
 }

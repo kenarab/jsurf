@@ -43,7 +43,7 @@ public class Vector3f extends Tuple3f implements java.io.Serializable
 {
 
     // Combatible with 1.1
-    static final int serialVersionUID= (int) -7031930069184524614L;
+    static final int serialVersionUID = (int) -7031930069184524614L;
 
     /**
      * Constructs and initializes a Vector3f from the specified xyz coordinates.
@@ -136,11 +136,11 @@ public class Vector3f extends Tuple3f implements java.io.Serializable
     {
 	float x, y;
 
-	x= v1.y * v2.z - v1.z * v2.y;
-	y= v2.x * v1.z - v2.z * v1.x;
-	this.z= v1.x * v2.y - v1.y * v2.x;
-	this.x= x;
-	this.y= y;
+	x = v1.y * v2.z - v1.z * v2.y;
+	y = v2.x * v1.z - v2.z * v1.x;
+	this.z = v1.x * v2.y - v1.y * v2.x;
+	this.x = x;
+	this.y = y;
     }
 
     /**
@@ -161,10 +161,10 @@ public class Vector3f extends Tuple3f implements java.io.Serializable
     {
 	float norm;
 
-	norm= (float) (1.0 / Math.sqrt(v1.x * v1.x + v1.y * v1.y + v1.z * v1.z));
-	this.x= v1.x * norm;
-	this.y= v1.y * norm;
-	this.z= v1.z * norm;
+	norm = (float) (1.0 / Math.sqrt(v1.x * v1.x + v1.y * v1.y + v1.z * v1.z));
+	this.x = v1.x * norm;
+	this.y = v1.y * norm;
+	this.z = v1.z * norm;
     }
 
     /**
@@ -174,10 +174,10 @@ public class Vector3f extends Tuple3f implements java.io.Serializable
     {
 	float norm;
 
-	norm= (float) (1.0 / Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z));
-	this.x*= norm;
-	this.y*= norm;
-	this.z*= norm;
+	norm = (float) (1.0 / Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z));
+	this.x *= norm;
+	this.y *= norm;
+	this.z *= norm;
     }
 
     /** 
@@ -188,11 +188,11 @@ public class Vector3f extends Tuple3f implements java.io.Serializable
       */
     public final float angle(Vector3f v1)
     {
-	double vDot= this.dot(v1) / (this.length() * v1.length());
+	double vDot = this.dot(v1) / (this.length() * v1.length());
 	if (vDot < -1.0)
-	    vDot= -1.0;
+	    vDot = -1.0;
 	if (vDot > 1.0)
-	    vDot= 1.0;
+	    vDot = 1.0;
 	return ((float) (Math.acos(vDot)));
     }
 

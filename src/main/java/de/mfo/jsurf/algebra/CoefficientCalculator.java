@@ -18,5 +18,5 @@ package de.mfo.jsurf.algebra;
 
 public interface CoefficientCalculator
 {
-    public UnivariatePolynomial calculateCoefficients( UnivariatePolynomial x, UnivariatePolynomial y, UnivariatePolynomial z );
+    public UnivariatePolynomial calculateCoefficients(UnivariatePolynomial x, UnivariatePolynomial y, UnivariatePolynomial z);
 }

@@ -18,77 +18,80 @@ package de.mfo.jsurf.algebra;
 
 import java.util.*;
 
-public class DoubleVariableRenameVisitor extends AbstractVisitor< PolynomialOperation, Void >
+public class DoubleVariableRenameVisitor extends AbstractVisitor<PolynomialOperation, Void>
 {
-	private Map< String, String > m;
-	
-	public DoubleVariableRenameVisitor( Map< String, String > m ) { this.m = m; }
-	
-    public PolynomialOperation visit( PolynomialAddition pa, Void param )
+    private Map<String, String> m;
+
+    public DoubleVariableRenameVisitor(Map<String, String> m)
     {
-        pa.firstOperand.accept( this, ( Void ) null );
-        pa.secondOperand.accept( this, ( Void ) null );
-        return pa;
+	this.m = m;
     }
 
-    public PolynomialOperation visit( PolynomialSubtraction ps, Void param )
+    public PolynomialOperation visit(PolynomialAddition pa, Void param)
     {
-        ps.firstOperand.accept( this, ( Void ) null );
-        ps.secondOperand.accept( this, ( Void ) null );
-        return ps;
+	pa.firstOperand.accept(this, (Void) null);
+	pa.secondOperand.accept(this, (Void) null);
+	return pa;
     }
 
-    public PolynomialOperation visit( PolynomialMultiplication pm, Void param )
+    public PolynomialOperation visit(PolynomialSubtraction ps, Void param)
     {
-        pm.firstOperand.accept( this, ( Void ) null );
-        pm.secondOperand.accept( this, ( Void ) null );
-        return pm;
+	ps.firstOperand.accept(this, (Void) null);
+	ps.secondOperand.accept(this, (Void) null);
+	return ps;
     }
 
-    public PolynomialOperation visit( PolynomialPower pp, Void param )
+    public PolynomialOperation visit(PolynomialMultiplication pm, Void param)
     {
-        return pp.base.accept( this, ( Void ) null );
+	pm.firstOperand.accept(this, (Void) null);
+	pm.secondOperand.accept(this, (Void) null);
+	return pm;
     }
 
-    public PolynomialOperation visit( PolynomialNegation pn, Void param )
+    public PolynomialOperation visit(PolynomialPower pp, Void param)
     {
-        pn.operand.accept( this, ( Void ) null );
-        return pn;
+	return pp.base.accept(this, (Void) null);
     }
 
-    public PolynomialOperation visit( PolynomialDoubleDivision pdd, Void param )
+    public PolynomialOperation visit(PolynomialNegation pn, Void param)
     {
-        pdd.dividend.accept( this, ( Void ) null );
-        pdd.divisor.accept( this, ( Void ) null );
-        return pdd;
+	pn.operand.accept(this, (Void) null);
+	return pn;
     }
 
-    public PolynomialOperation visit( PolynomialVariable pv, Void param )
+    public PolynomialOperation visit(PolynomialDoubleDivision pdd, Void param)
     {
-        return pv;
+	pdd.dividend.accept(this, (Void) null);
+	pdd.divisor.accept(this, (Void) null);
+	return pdd;
     }
 
-    public PolynomialOperation visit( DoubleBinaryOperation dbop, Void param )
+    public PolynomialOperation visit(PolynomialVariable pv, Void param)
     {
-        dbop.firstOperand.accept( this, ( Void ) null );
-        dbop.secondOperand.accept( this, ( Void ) null );
-        return dbop;
+	return pv;
     }
 
-    public PolynomialOperation visit( DoubleUnaryOperation duop, Void param )
+    public PolynomialOperation visit(DoubleBinaryOperation dbop, Void param)
     {
-        return duop.operand.accept( this, ( Void ) null );
+	dbop.firstOperand.accept(this, (Void) null);
+	dbop.secondOperand.accept(this, (Void) null);
+	return dbop;
     }
 
-    public PolynomialOperation visit( DoubleValue dv, Void param )
+    public PolynomialOperation visit(DoubleUnaryOperation duop, Void param)
     {
-        return dv;
+	return duop.operand.accept(this, (Void) null);
     }
 
-    public PolynomialOperation visit( DoubleVariable dv, Void param )
-    {	
-    	String new_name = m.get( dv.name );
-    	dv.name = new_name != null ? new_name : dv.name;
-        return dv;
+    public PolynomialOperation visit(DoubleValue dv, Void param)
+    {
+	return dv;
+    }
+
+    public PolynomialOperation visit(DoubleVariable dv, Void param)
+    {
+	String new_name = m.get(dv.name);
+	dv.name = new_name != null ? new_name : dv.name;
+	return dv;
     }
 }

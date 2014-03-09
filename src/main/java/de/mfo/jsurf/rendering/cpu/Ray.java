@@ -23,19 +23,19 @@ public class Ray
     public Point3d o;
     public Vector3d d;
 
-    public Ray( Point3d o, Vector3d d )
+    public Ray(Point3d o, Vector3d d)
     {
-        this.o = o;
-        this.d = d;
+	this.o = o;
+	this.d = d;
     }
 
-    public Point3d at( double t )
+    public Point3d at(double t)
     {
-        return Helper.interpolate1D( o, d, t );
+	return Helper.interpolate1D(o, d, t);
     }
 
     public String toString()
     {
-        return o.toString() + "+t*" + d.toString();
+	return o.toString() + "+t*" + d.toString();
     }
 }

@@ -52,7 +52,7 @@ public class Color4b extends Tuple4b implements java.io.Serializable
 {
 
     // Compatible with 1.1
-    static final int serialVersionUID= (int) -105080578052502155L;
+    static final int serialVersionUID = (int) -105080578052502155L;
 
     /**
      * Constructs and initializes a Color4b from the four specified values.
@@ -131,10 +131,10 @@ public class Color4b extends Tuple4b implements java.io.Serializable
      */
     public final void set(Color color)
     {
-	x= (byte) color.getRed();
-	y= (byte) color.getGreen();
-	z= (byte) color.getBlue();
-	w= (byte) color.getAlpha();
+	x = (byte) color.getRed();
+	y = (byte) color.getGreen();
+	z = (byte) color.getBlue();
+	w = (byte) color.getAlpha();
     }
 
     /**
@@ -147,10 +147,10 @@ public class Color4b extends Tuple4b implements java.io.Serializable
      */
     public final Color get()
     {
-	int r= (int) x & 0xff;
-	int g= (int) y & 0xff;
-	int b= (int) z & 0xff;
-	int a= (int) w & 0xff;
+	int r = (int) x & 0xff;
+	int g = (int) y & 0xff;
+	int b = (int) z & 0xff;
+	int a = (int) w & 0xff;
 
 	return new Color(r, g, b, a);
     }

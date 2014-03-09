@@ -50,7 +50,7 @@ import java.lang.Math;
 public abstract class Tuple3b implements java.io.Serializable, Cloneable
 {
 
-    static final int serialVersionUID= (int) -483782685323607044L;
+    static final int serialVersionUID = (int) -483782685323607044L;
 
     /**
      * The first value.
@@ -75,9 +75,9 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
      */
     public Tuple3b(byte b1, byte b2, byte b3)
     {
-	this.x= b1;
-	this.y= b2;
-	this.z= b3;
+	this.x = b1;
+	this.y = b2;
+	this.z = b3;
     }
 
     /**
@@ -86,9 +86,9 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
      */
     public Tuple3b(byte[] t)
     {
-	this.x= t[0];
-	this.y= t[1];
-	this.z= t[2];
+	this.x = t[0];
+	this.y = t[1];
+	this.z = t[2];
     }
 
     /**
@@ -97,9 +97,9 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
      */
     public Tuple3b(Tuple3b t1)
     {
-	this.x= t1.x;
-	this.y= t1.y;
-	this.z= t1.z;
+	this.x = t1.x;
+	this.y = t1.y;
+	this.z = t1.z;
     }
 
     /**
@@ -107,9 +107,9 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
      */
     public Tuple3b()
     {
-	this.x= (byte) 0;
-	this.y= (byte) 0;
-	this.z= (byte) 0;
+	this.x = (byte) 0;
+	this.y = (byte) 0;
+	this.z = (byte) 0;
     }
 
     /**
@@ -129,9 +129,9 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
     public final void get(byte[] t)
     {
 
-	t[0]= this.x;
-	t[1]= this.y;
-	t[2]= this.z;
+	t[0] = this.x;
+	t[1] = this.y;
+	t[2] = this.z;
     }
 
     /**
@@ -141,9 +141,9 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
       */
     public final void get(Tuple3b t1)
     {
-	t1.x= this.x;
-	t1.y= this.y;
-	t1.z= this.z;
+	t1.x = this.x;
+	t1.y = this.y;
+	t1.z = this.z;
     }
 
     /**
@@ -153,9 +153,9 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
       */
     public final void set(Tuple3b t1)
     {
-	this.x= t1.x;
-	this.y= t1.y;
-	this.z= t1.z;
+	this.x = t1.x;
+	this.y = t1.y;
+	this.z = t1.z;
     }
 
     /**
@@ -165,9 +165,9 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
       */
     public final void set(byte[] t)
     {
-	this.x= t[0];
-	this.y= t[1];
-	this.z= t[2];
+	this.x = t[0];
+	this.y = t[1];
+	this.z = t[2];
     }
 
     /**
@@ -199,7 +199,7 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
     {
 	try
 	{
-	    Tuple3b t2= (Tuple3b) t1;
+	    Tuple3b t2 = (Tuple3b) t1;
 	    return (this.x == t2.x && this.y == t2.y && this.z == t2.z);
 	}
 	catch (NullPointerException e2)
@@ -265,7 +265,7 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
      */
     public final void setX(byte x)
     {
-	this.x= x;
+	this.x = x;
     }
 
     /**
@@ -289,7 +289,7 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
      */
     public final void setY(byte y)
     {
-	this.y= y;
+	this.y = y;
     }
 
     /**
@@ -313,7 +313,7 @@ public abstract class Tuple3b implements java.io.Serializable, Cloneable
      */
     public final void setZ(byte z)
     {
-	this.z= z;
+	this.z = z;
     }
 
 }

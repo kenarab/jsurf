@@ -18,6 +18,7 @@ package de.mfo.jsurf.algebra;
 
 import javax.vecmath.Vector3d;
 
-public interface UnivariatePolynomialVector3d {
-    public Vector3d setT( double t );
+public interface UnivariatePolynomialVector3d
+{
+    public Vector3d setT(double t);
 }

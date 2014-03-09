@@ -42,7 +42,7 @@ public class Vector4d extends Tuple4d implements java.io.Serializable
 {
 
     // Compatible with 1.1
-    static final int serialVersionUID= (int) 3938123424117448700L;
+    static final int serialVersionUID = (int) 3938123424117448700L;
 
     /**
      * Constructs and initializes a Vector4d from the specified xyzw coordinates.
@@ -134,10 +134,10 @@ public class Vector4d extends Tuple4d implements java.io.Serializable
      */
     public final void set(Tuple3d t1)
     {
-	this.x= t1.x;
-	this.y= t1.y;
-	this.z= t1.z;
-	this.w= 0.0;
+	this.x = t1.x;
+	this.y = t1.y;
+	this.z = t1.z;
+	this.w = 0.0;
     }
 
     /**
@@ -176,11 +176,11 @@ public class Vector4d extends Tuple4d implements java.io.Serializable
     {
 	double norm;
 
-	norm= 1.0 / Math.sqrt(v1.x * v1.x + v1.y * v1.y + v1.z * v1.z + v1.w * v1.w);
-	this.x= v1.x * norm;
-	this.y= v1.y * norm;
-	this.z= v1.z * norm;
-	this.w= v1.w * norm;
+	norm = 1.0 / Math.sqrt(v1.x * v1.x + v1.y * v1.y + v1.z * v1.z + v1.w * v1.w);
+	this.x = v1.x * norm;
+	this.y = v1.y * norm;
+	this.z = v1.z * norm;
+	this.w = v1.w * norm;
     }
 
     /**
@@ -190,11 +190,11 @@ public class Vector4d extends Tuple4d implements java.io.Serializable
     {
 	double norm;
 
-	norm= 1.0 / Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z + this.w * this.w);
-	this.x*= norm;
-	this.y*= norm;
-	this.z*= norm;
-	this.w*= norm;
+	norm = 1.0 / Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z + this.w * this.w);
+	this.x *= norm;
+	this.y *= norm;
+	this.z *= norm;
+	this.w *= norm;
     }
 
     /** 
@@ -206,11 +206,11 @@ public class Vector4d extends Tuple4d implements java.io.Serializable
       */
     public final double angle(Vector4d v1)
     {
-	double vDot= this.dot(v1) / (this.length() * v1.length());
+	double vDot = this.dot(v1) / (this.length() * v1.length());
 	if (vDot < -1.0)
-	    vDot= -1.0;
+	    vDot = -1.0;
 	if (vDot > 1.0)
-	    vDot= 1.0;
+	    vDot = 1.0;
 	return ((double) (Math.acos(vDot)));
     }
 

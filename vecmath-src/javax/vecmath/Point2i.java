@@ -42,7 +42,7 @@ import java.lang.Math;
 public class Point2i extends Tuple2i implements java.io.Serializable
 {
 
-    static final int serialVersionUID= (int) 9208072376494084954L;
+    static final int serialVersionUID = (int) 9208072376494084954L;
 
     /**
      * Constructs and initializes a Point2i from the specified

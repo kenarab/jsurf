@@ -42,7 +42,7 @@ public class Point3d extends Tuple3d implements java.io.Serializable
 {
 
     // Compatible with 1.1
-    static final int serialVersionUID= (int) 5718062286069042927L;
+    static final int serialVersionUID = (int) 5718062286069042927L;
 
     /**
      * Constructs and initializes a Point3d from the specified xyz coordinates.
@@ -117,9 +117,9 @@ public class Point3d extends Tuple3d implements java.io.Serializable
     {
 	double dx, dy, dz;
 
-	dx= this.x - p1.x;
-	dy= this.y - p1.y;
-	dz= this.z - p1.z;
+	dx = this.x - p1.x;
+	dy = this.y - p1.y;
+	dz = this.z - p1.z;
 	return (dx * dx + dy * dy + dz * dz);
     }
 
@@ -132,9 +132,9 @@ public class Point3d extends Tuple3d implements java.io.Serializable
     {
 	double dx, dy, dz;
 
-	dx= this.x - p1.x;
-	dy= this.y - p1.y;
-	dz= this.z - p1.z;
+	dx = this.x - p1.x;
+	dy = this.y - p1.y;
+	dz = this.z - p1.z;
 	return Math.sqrt(dx * dx + dy * dy + dz * dz);
     }
 
@@ -160,7 +160,7 @@ public class Point3d extends Tuple3d implements java.io.Serializable
     public final double distanceLinf(Point3d p1)
     {
 	double tmp;
-	tmp= Math.max(Math.abs(this.x - p1.x), Math.abs(this.y - p1.y));
+	tmp = Math.max(Math.abs(this.x - p1.x), Math.abs(this.y - p1.y));
 
 	return Math.max(tmp, Math.abs(this.z - p1.z));
     }
@@ -174,10 +174,10 @@ public class Point3d extends Tuple3d implements java.io.Serializable
     {
 	double oneOw;
 
-	oneOw= 1 / p1.w;
-	x= p1.x * oneOw;
-	y= p1.y * oneOw;
-	z= p1.z * oneOw;
+	oneOw = 1 / p1.w;
+	x = p1.x * oneOw;
+	y = p1.y * oneOw;
+	z = p1.z * oneOw;
 
     }
 

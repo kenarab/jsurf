@@ -1,3 +1,4 @@
+
 package de.mfo.jsurf;
 
 import java.awt.Point;
@@ -28,33 +29,33 @@ public class BufferedImageGenerator implements ImageGenerator
 
     public void setSize(int size)
     {
-	this.size= size;
+	this.size = size;
     }
 
     public BufferedImageGenerator(int size, String jsurf_filename, String output_filename)
     {
-	this.size= size;
-	this.jsurf_filename= jsurf_filename;
-	this.output_filename= output_filename;
+	this.size = size;
+	this.jsurf_filename = jsurf_filename;
+	this.output_filename = output_filename;
     }
 
     public BufferedImage createBufferedImageFromRGB(ImgBuffer ib)
     {
-	int w= ib.width;
-	int h= ib.height;
+	int w = ib.width;
+	int h = ib.height;
 
-	DirectColorModel colormodel= new DirectColorModel(24, 0xff0000, 0xff00, 0xff);
-	SampleModel sampleModel= colormodel.createCompatibleSampleModel(w, h);
-	DataBufferInt data= new DataBufferInt(ib.rgbBuffer, w * h);
-	WritableRaster raster= WritableRaster.createWritableRaster(sampleModel, data, new Point(0, 0));
+	DirectColorModel colormodel = new DirectColorModel(24, 0xff0000, 0xff00, 0xff);
+	SampleModel sampleModel = colormodel.createCompatibleSampleModel(w, h);
+	DataBufferInt data = new DataBufferInt(ib.rgbBuffer, w * h);
+	WritableRaster raster = WritableRaster.createWritableRaster(sampleModel, data, new Point(0, 0));
 	return new BufferedImage(colormodel, raster, false, null);
     }
 
     public static BufferedImage flipV(BufferedImage bi)
     {
-	AffineTransform tx= AffineTransform.getScaleInstance(1, -1);
+	AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
 	tx.translate(0, -bi.getHeight(null));
-	AffineTransformOp op= new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
+	AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
 	return op.filter(bi, null);
     }
 
@@ -62,7 +63,7 @@ public class BufferedImageGenerator implements ImageGenerator
     {
 	try
 	{
-	    bufferedImage= flipV(bufferedImage);
+	    bufferedImage = flipV(bufferedImage);
 	    javax.imageio.ImageIO.write(bufferedImage, "png", os);
 	}
 	catch (Exception e)
@@ -77,28 +78,28 @@ public class BufferedImageGenerator implements ImageGenerator
     {
 	try
 	{
-	    BufferedImage bufferedImage= createBufferedImageFromRGB(imgBuffer);
+	    BufferedImage bufferedImage = createBufferedImageFromRGB(imgBuffer);
 
 	    if (output_filename != null)
 	    {
 		OutputStream os;
 		if (output_filename.equals("-"))
-		    os= System.out;
+		    os = System.out;
 		else
-		    os= new FileOutputStream(new File(output_filename));
+		    os = new FileOutputStream(new File(output_filename));
 
 		saveToPNG(os, bufferedImage, output_filename);
 	    }
 	    else
 	    {
 		// display the image in a window 
-		final String window_title= "jsurf: " + jsurf_filename;
-		final BufferedImage window_image= bufferedImage;
+		final String window_title = "jsurf: " + jsurf_filename;
+		final BufferedImage window_image = bufferedImage;
 		SwingUtilities.invokeLater(new Runnable()
 		{
 		    public void run()
 		    {
-			JFrame f= new JFrame(window_title);
+			JFrame f = new JFrame(window_title);
 			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			f.getContentPane().add(new JLabel(new ImageIcon(window_image)));
 			f.pack();
@@ -119,8 +120,8 @@ public class BufferedImageGenerator implements ImageGenerator
 
     public void startTimerPeriodically(final Runnable runnable, int milliseconds)
     {
-	timer= new Timer();
-	TimerTask timerTask= new TimerTask()
+	timer = new Timer();
+	TimerTask timerTask = new TimerTask()
 	{
 	    public void run()
 	    {

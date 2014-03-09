@@ -52,7 +52,7 @@ public class Color3b extends Tuple3b implements java.io.Serializable
 {
 
     // Compatible with 1.1
-    static final int serialVersionUID= (int) 6632576088353444794L;
+    static final int serialVersionUID = (int) 6632576088353444794L;
 
     /**
      * Constructs and initializes a Color3b from the specified three values.
@@ -128,9 +128,9 @@ public class Color3b extends Tuple3b implements java.io.Serializable
      */
     public final void set(Color color)
     {
-	x= (byte) color.getRed();
-	y= (byte) color.getGreen();
-	z= (byte) color.getBlue();
+	x = (byte) color.getRed();
+	y = (byte) color.getGreen();
+	z = (byte) color.getBlue();
     }
 
     /**
@@ -143,9 +143,9 @@ public class Color3b extends Tuple3b implements java.io.Serializable
      */
     public final Color get()
     {
-	int r= (int) x & 0xff;
-	int g= (int) y & 0xff;
-	int b= (int) z & 0xff;
+	int r = (int) x & 0xff;
+	int g = (int) y & 0xff;
+	int b = (int) z & 0xff;
 
 	return new Color(r, g, b);
     }

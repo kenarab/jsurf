@@ -42,7 +42,7 @@ public class Point2f extends Tuple2f implements java.io.Serializable
 {
 
     // Compatible with 1.1
-    static final int serialVersionUID= (int) -4801347926528714435L;
+    static final int serialVersionUID = (int) -4801347926528714435L;
 
     /**
      * Constructs and initializes a Point2f from the specified xy coordinates.
@@ -115,8 +115,8 @@ public class Point2f extends Tuple2f implements java.io.Serializable
     {
 	float dx, dy;
 
-	dx= this.x - p1.x;
-	dy= this.y - p1.y;
+	dx = this.x - p1.x;
+	dy = this.y - p1.y;
 	return dx * dx + dy * dy;
     }
 
@@ -128,8 +128,8 @@ public class Point2f extends Tuple2f implements java.io.Serializable
     {
 	float dx, dy;
 
-	dx= this.x - p1.x;
-	dy= this.y - p1.y;
+	dx = this.x - p1.x;
+	dy = this.y - p1.y;
 	return (float) Math.sqrt(dx * dx + dy * dy);
     }
 

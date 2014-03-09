@@ -42,7 +42,7 @@ public class Vector2f extends Tuple2f implements java.io.Serializable
 {
 
     // Combatible with 1.1
-    static final int serialVersionUID= (int) -2168194326883512320L;
+    static final int serialVersionUID = (int) -2168194326883512320L;
 
     /**
      * Constructs and initializes a Vector2f from the specified xy coordinates.
@@ -142,9 +142,9 @@ public class Vector2f extends Tuple2f implements java.io.Serializable
     {
 	float norm;
 
-	norm= (float) (1.0 / Math.sqrt(v1.x * v1.x + v1.y * v1.y));
-	this.x= v1.x * norm;
-	this.y= v1.y * norm;
+	norm = (float) (1.0 / Math.sqrt(v1.x * v1.x + v1.y * v1.y));
+	this.x = v1.x * norm;
+	this.y = v1.y * norm;
     }
 
     /**
@@ -154,9 +154,9 @@ public class Vector2f extends Tuple2f implements java.io.Serializable
     {
 	float norm;
 
-	norm= (float) (1.0 / Math.sqrt(this.x * this.x + this.y * this.y));
-	this.x*= norm;
-	this.y*= norm;
+	norm = (float) (1.0 / Math.sqrt(this.x * this.x + this.y * this.y));
+	this.x *= norm;
+	this.y *= norm;
     }
 
     /**
@@ -167,11 +167,11 @@ public class Vector2f extends Tuple2f implements java.io.Serializable
       */
     public final float angle(Vector2f v1)
     {
-	double vDot= this.dot(v1) / (this.length() * v1.length());
+	double vDot = this.dot(v1) / (this.length() * v1.length());
 	if (vDot < -1.0)
-	    vDot= -1.0;
+	    vDot = -1.0;
 	if (vDot > 1.0)
-	    vDot= 1.0;
+	    vDot = 1.0;
 	return ((float) (Math.acos(vDot)));
     }
 

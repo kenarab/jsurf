@@ -43,7 +43,7 @@ public class Point3i extends Tuple3i implements java.io.Serializable
 {
 
     // Compatible with 1.2
-    static final int serialVersionUID= (int) 6149289077348153921L;
+    static final int serialVersionUID = (int) 6149289077348153921L;
 
     /**
      * Constructs and initializes a Point3i from the specified

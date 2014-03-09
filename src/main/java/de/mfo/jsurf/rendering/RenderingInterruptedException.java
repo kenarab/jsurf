@@ -18,8 +18,23 @@ package de.mfo.jsurf.rendering;
 
 public class RenderingInterruptedException extends RuntimeException
 {
-    public RenderingInterruptedException() { super(); }
-    public RenderingInterruptedException( String message ) { super( message ); }
-    public RenderingInterruptedException( String message, Throwable cause ) { super( message, cause ); }
-    public RenderingInterruptedException( Throwable cause ) { super( cause ); }
+    public RenderingInterruptedException()
+    {
+	super();
+    }
+
+    public RenderingInterruptedException(String message)
+    {
+	super(message);
+    }
+
+    public RenderingInterruptedException(String message, Throwable cause)
+    {
+	super(message, cause);
+    }
+
+    public RenderingInterruptedException(Throwable cause)
+    {
+	super(cause);
+    }
 }

@@ -16,8 +16,15 @@
 
 package de.mfo.jsurf.algebra;
 
-public abstract class AbstractVisitor< RETURN_TYPE, PARAM_TYPE > implements Visitor< RETURN_TYPE, PARAM_TYPE >
+public abstract class AbstractVisitor<RETURN_TYPE, PARAM_TYPE> implements Visitor<RETURN_TYPE, PARAM_TYPE>
 {
-    public RETURN_TYPE visit( PolynomialOperation pop, PARAM_TYPE param ) { throw new UnsupportedOperationException(); }
-    public RETURN_TYPE visit( DoubleOperation dop, PARAM_TYPE param ) { throw new UnsupportedOperationException(); }
+    public RETURN_TYPE visit(PolynomialOperation pop, PARAM_TYPE param)
+    {
+	throw new UnsupportedOperationException();
+    }
+
+    public RETURN_TYPE visit(DoubleOperation dop, PARAM_TYPE param)
+    {
+	throw new UnsupportedOperationException();
+    }
 }

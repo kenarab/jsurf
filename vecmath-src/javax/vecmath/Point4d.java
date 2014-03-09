@@ -42,7 +42,7 @@ public class Point4d extends Tuple4d implements java.io.Serializable
 {
 
     // Compatible with 1.1
-    static final int serialVersionUID= (int) 1733471895962736949L;
+    static final int serialVersionUID = (int) 1733471895962736949L;
 
     /**
      * Constructs and initializes a Point4d from the specified xyzw coordinates.
@@ -134,10 +134,10 @@ public class Point4d extends Tuple4d implements java.io.Serializable
      */
     public final void set(Tuple3d t1)
     {
-	this.x= t1.x;
-	this.y= t1.y;
-	this.z= t1.z;
-	this.w= 1.0;
+	this.x = t1.x;
+	this.y = t1.y;
+	this.z = t1.z;
+	this.w = 1.0;
     }
 
     /**
@@ -149,10 +149,10 @@ public class Point4d extends Tuple4d implements java.io.Serializable
     {
 	double dx, dy, dz, dw;
 
-	dx= this.x - p1.x;
-	dy= this.y - p1.y;
-	dz= this.z - p1.z;
-	dw= this.w - p1.w;
+	dx = this.x - p1.x;
+	dy = this.y - p1.y;
+	dz = this.z - p1.z;
+	dw = this.w - p1.w;
 	return (dx * dx + dy * dy + dz * dz + dw * dw);
     }
 
@@ -165,10 +165,10 @@ public class Point4d extends Tuple4d implements java.io.Serializable
     {
 	double dx, dy, dz, dw;
 
-	dx= this.x - p1.x;
-	dy= this.y - p1.y;
-	dz= this.z - p1.z;
-	dw= this.w - p1.w;
+	dx = this.x - p1.x;
+	dy = this.y - p1.y;
+	dz = this.z - p1.z;
+	dw = this.w - p1.w;
 	return Math.sqrt(dx * dx + dy * dy + dz * dz + dw * dw);
     }
 
@@ -194,8 +194,8 @@ public class Point4d extends Tuple4d implements java.io.Serializable
     public final double distanceLinf(Point4d p1)
     {
 	double t1, t2;
-	t1= Math.max(Math.abs(this.x - p1.x), Math.abs(this.y - p1.y));
-	t2= Math.max(Math.abs(this.z - p1.z), Math.abs(this.w - p1.w));
+	t1 = Math.max(Math.abs(this.x - p1.x), Math.abs(this.y - p1.y));
+	t2 = Math.max(Math.abs(this.z - p1.z), Math.abs(this.w - p1.w));
 
 	return Math.max(t1, t2);
     }
@@ -210,11 +210,11 @@ public class Point4d extends Tuple4d implements java.io.Serializable
     {
 	double oneOw;
 
-	oneOw= 1 / p1.w;
-	x= p1.x * oneOw;
-	y= p1.y * oneOw;
-	z= p1.z * oneOw;
-	w= 1.0;
+	oneOw = 1 / p1.w;
+	x = p1.x * oneOw;
+	y = p1.y * oneOw;
+	z = p1.z * oneOw;
+	w = 1.0;
 
     }
 

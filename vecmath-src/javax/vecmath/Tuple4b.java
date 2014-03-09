@@ -50,7 +50,7 @@ import java.lang.Math;
 public abstract class Tuple4b implements java.io.Serializable, Cloneable
 {
 
-    static final int serialVersionUID= (int) -8226727741811898211L;
+    static final int serialVersionUID = (int) -8226727741811898211L;
 
     /**
      * The first value.
@@ -81,10 +81,10 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
      */
     public Tuple4b(byte b1, byte b2, byte b3, byte b4)
     {
-	this.x= b1;
-	this.y= b2;
-	this.z= b3;
-	this.w= b4;
+	this.x = b1;
+	this.y = b2;
+	this.z = b3;
+	this.w = b4;
     }
 
     /**
@@ -93,10 +93,10 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
      */
     public Tuple4b(byte[] t)
     {
-	this.x= t[0];
-	this.y= t[1];
-	this.z= t[2];
-	this.w= t[3];
+	this.x = t[0];
+	this.y = t[1];
+	this.z = t[2];
+	this.w = t[3];
     }
 
     /**
@@ -105,10 +105,10 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
      */
     public Tuple4b(Tuple4b t1)
     {
-	this.x= t1.x;
-	this.y= t1.y;
-	this.z= t1.z;
-	this.w= t1.w;
+	this.x = t1.x;
+	this.y = t1.y;
+	this.z = t1.z;
+	this.w = t1.w;
     }
 
     /**
@@ -116,10 +116,10 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
      */
     public Tuple4b()
     {
-	this.x= (byte) 0;
-	this.y= (byte) 0;
-	this.z= (byte) 0;
-	this.w= (byte) 0;
+	this.x = (byte) 0;
+	this.y = (byte) 0;
+	this.z = (byte) 0;
+	this.w = (byte) 0;
     }
 
     /**
@@ -138,10 +138,10 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
       */
     public final void get(byte[] b)
     {
-	b[0]= this.x;
-	b[1]= this.y;
-	b[2]= this.z;
-	b[3]= this.w;
+	b[0] = this.x;
+	b[1] = this.y;
+	b[2] = this.z;
+	b[3] = this.w;
     }
 
     /**   
@@ -151,10 +151,10 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
       */
     public final void get(Tuple4b t1)
     {
-	t1.x= this.x;
-	t1.y= this.y;
-	t1.z= this.z;
-	t1.w= this.w;
+	t1.x = this.x;
+	t1.y = this.y;
+	t1.z = this.z;
+	t1.w = this.w;
     }
 
     /**
@@ -164,10 +164,10 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
       */
     public final void set(Tuple4b t1)
     {
-	this.x= t1.x;
-	this.y= t1.y;
-	this.z= t1.z;
-	this.w= t1.w;
+	this.x = t1.x;
+	this.y = t1.y;
+	this.z = t1.z;
+	this.w = t1.w;
     }
 
     /**
@@ -177,10 +177,10 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
       */
     public final void set(byte[] b)
     {
-	this.x= b[0];
-	this.y= b[1];
-	this.z= b[2];
-	this.w= b[3];
+	this.x = b[0];
+	this.y = b[1];
+	this.z = b[2];
+	this.w = b[3];
     }
 
     /**
@@ -211,7 +211,7 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
     {
 	try
 	{
-	    Tuple4b t2= (Tuple4b) t1;
+	    Tuple4b t2 = (Tuple4b) t1;
 	    return (this.x == t2.x && this.y == t2.y && this.z == t2.z && this.w == t2.w);
 	}
 	catch (NullPointerException e2)
@@ -277,7 +277,7 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
      */
     public final void setX(byte x)
     {
-	this.x= x;
+	this.x = x;
     }
 
     /**
@@ -301,7 +301,7 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
      */
     public final void setY(byte y)
     {
-	this.y= y;
+	this.y = y;
     }
 
     /**
@@ -325,7 +325,7 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
      */
     public final void setZ(byte z)
     {
-	this.z= z;
+	this.z = z;
     }
 
     /**
@@ -349,6 +349,6 @@ public abstract class Tuple4b implements java.io.Serializable, Cloneable
      */
     public final void setW(byte w)
     {
-	this.w= w;
+	this.w = w;
     }
 }

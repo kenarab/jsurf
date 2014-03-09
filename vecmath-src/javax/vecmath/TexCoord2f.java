@@ -42,7 +42,7 @@ public class TexCoord2f extends Tuple2f implements java.io.Serializable
 {
 
     // Combatible with 1.1
-    static final int serialVersionUID= (int) 7998248474800032487L;
+    static final int serialVersionUID = (int) 7998248474800032487L;
 
     /**
      * Constructs and initializes a TexCoord2f from the specified xy coordinates.

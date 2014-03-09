@@ -47,7 +47,7 @@ public class Color3f extends Tuple3f implements java.io.Serializable
 {
 
     // Compatible with 1.1
-    static final int serialVersionUID= (int) -1861792981817493659L;
+    static final int serialVersionUID = (int) -1861792981817493659L;
 
     /**
      * Constructs and initializes a Color3f from the three xyz values.
@@ -132,9 +132,9 @@ public class Color3f extends Tuple3f implements java.io.Serializable
      */
     public final void set(Color color)
     {
-	x= (float) color.getRed() / 255.0f;
-	y= (float) color.getGreen() / 255.0f;
-	z= (float) color.getBlue() / 255.0f;
+	x = (float) color.getRed() / 255.0f;
+	y = (float) color.getGreen() / 255.0f;
+	z = (float) color.getBlue() / 255.0f;
     }
 
     /**
@@ -147,9 +147,9 @@ public class Color3f extends Tuple3f implements java.io.Serializable
      */
     public final Color get()
     {
-	int r= Math.round(x * 255.0f);
-	int g= Math.round(y * 255.0f);
-	int b= Math.round(z * 255.0f);
+	int r = Math.round(x * 255.0f);
+	int g = Math.round(y * 255.0f);
+	int b = Math.round(z * 255.0f);
 
 	return new Color(r, g, b);
     }

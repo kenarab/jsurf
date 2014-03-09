@@ -42,7 +42,7 @@ public class TexCoord3f extends Tuple3f implements java.io.Serializable
 {
 
     // Combatible with 1.1
-    static final int serialVersionUID= (int) -3517736544731446513L;
+    static final int serialVersionUID = (int) -3517736544731446513L;
 
     /**
      * Constructs and initializes a TexCoord3f from the specified xyz

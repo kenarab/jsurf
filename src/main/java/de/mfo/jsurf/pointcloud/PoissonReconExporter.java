@@ -25,25 +25,28 @@ import java.io.*;
 public class PoissonReconExporter implements Exporter
 {
     PrintStream ps;
-    
-    public PoissonReconExporter( File file )
-        throws IOException
+
+    public PoissonReconExporter(File file) throws IOException
     {
-        ps = new PrintStream( new FileOutputStream( file ) );
-    }
-    
-    public void startExport() {}
-    
-    public void export( Point3d p, Vector3d normal )
-    {
-        ps.print( p.x + " " + p.y + " " + p.z + " " + normal.x + " " + normal.y + " " + normal.z + " ");
+	ps = new PrintStream(new FileOutputStream(file));
     }
 
-    public void exportBBox( double size ) {}
-    
+    public void startExport()
+    {
+    }
+
+    public void export(Point3d p, Vector3d normal)
+    {
+	ps.print(p.x + " " + p.y + " " + p.z + " " + normal.x + " " + normal.y + " " + normal.z + " ");
+    }
+
+    public void exportBBox(double size)
+    {
+    }
+
     public void finishExport()
     {
-        ps.flush();
-        ps.close();
+	ps.flush();
+	ps.close();
     }
 }
