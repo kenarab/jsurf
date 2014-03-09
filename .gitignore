@@ -14,3 +14,8 @@ build
 ehthumbs.db
 Thumbs.db
 /bin
+/cli-src/
+/.settings/
+/.classpath
+/.project
+/example1.properties
