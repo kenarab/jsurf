@@ -101,11 +101,7 @@ public abstract class AlgebraicSurfaceRenderer
 
     public void setSurfaceFamily(String expression) throws Exception
     {
-<<<<<<< HEAD
 	setSurfaceFamily(ParserService.parse(expression), expression);
-=======
-	setSurfaceFamily(AlgebraicExpressionParser.parse(expression), expression);
->>>>>>> ae21e7714c6a385ce00e4031b769abb6e9869b67
     }
 
     private void clearExpressionCache()
