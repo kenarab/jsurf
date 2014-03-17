@@ -16,14 +16,27 @@
 
 package de.mfo.jsurf.pointcloud;
 
-import de.mfo.jsurf.algebra.*;
-import de.mfo.jsurf.parser.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Random;
 
-import javax.vecmath.*;
-import java.io.*;
-import java.util.*;
-import javax.swing.*;
-import javax.swing.filechooser.*;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.vecmath.Point3d;
+import javax.vecmath.Vector2d;
+import javax.vecmath.Vector3d;
+
+import de.mfo.jsurf.algebra.DChainRootFinder;
+import de.mfo.jsurf.algebra.Differentiator;
+import de.mfo.jsurf.algebra.GradientCalculator;
+import de.mfo.jsurf.algebra.PolynomialExpansionCoefficientCalculator;
+import de.mfo.jsurf.algebra.PolynomialOperation;
+import de.mfo.jsurf.algebra.PolynomialVariable;
+import de.mfo.jsurf.algebra.SimpleGradientCalculator;
+import de.mfo.jsurf.algebra.Simplificator;
+import de.mfo.jsurf.algebra.UnivariatePolynomial;
+import de.mfo.jsurf.parser.ParserService;
 
 public class PointCloudCreator // implements Runnable
 {
@@ -46,7 +59,7 @@ public class PointCloudCreator // implements Runnable
 	{
 	    Simplificator simplificator = new Simplificator();
 
-	    po = AlgebraicExpressionParser.parse(expression);
+	    po = ParserService.parse(expression);
 	    po = po.accept(simplificator, (Void) null);
 
 	    // calculate grad_x and simplify
