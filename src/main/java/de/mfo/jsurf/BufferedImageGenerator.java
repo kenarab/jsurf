@@ -65,6 +65,7 @@ public class BufferedImageGenerator implements ImageGenerator
 	{
 	    bufferedImage = flipV(bufferedImage);
 	    javax.imageio.ImageIO.write(bufferedImage, "png", os);
+	    System.exit( 0 );
 	}
 	catch (Exception e)
 	{
