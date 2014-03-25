@@ -16,6 +16,7 @@
 
 package de.mfo.jsurf.rendering;
 
+import java.io.Serializable;
 import java.util.Map;
 import java.util.Set;
 
@@ -31,7 +32,7 @@ import de.mfo.jsurf.algebra.Simplificator;
 import de.mfo.jsurf.algebra.ToStringVisitor;
 import de.mfo.jsurf.parser.ParserService;
 
-public abstract class AlgebraicSurfaceRenderer
+public abstract class AlgebraicSurfaceRenderer implements Serializable
 {
 
     public static final int MAX_LIGHTS = 8;
@@ -46,6 +47,11 @@ public abstract class AlgebraicSurfaceRenderer
     private PolynomialOperation gradientZExpression;
 
     private Simplificator parameterSubstitutor;
+
+    public void setParameterSubstitutor(Simplificator parameterSubstitutor)
+    {
+        this.parameterSubstitutor = parameterSubstitutor;
+    }
 
     private Camera camera;
     private Material frontMaterial;
@@ -279,5 +285,45 @@ public abstract class AlgebraicSurfaceRenderer
     public Color3f getBackgroundColor()
     {
 	return this.backgroundColor;
+    }
+
+    public LightSource[] getLightSources()
+    {
+        return lightSources;
+    }
+
+    public void setLightSources(LightSource[] lightSources)
+    {
+        this.lightSources = lightSources;
+    }
+
+    public Simplificator getParameterSubstitutor()
+    {
+        return parameterSubstitutor;
+    }
+
+    public String getSurfaceExpressionFamilyString()
+    {
+        return surfaceExpressionFamilyString;
+    }
+
+    public void setSurfaceExpressionFamilyString(String surfaceExpressionFamilyString)
+    {
+        this.surfaceExpressionFamilyString = surfaceExpressionFamilyString;
+    }
+
+    public PolynomialOperation getSurfaceExpressionFamily()
+    {
+        return surfaceExpressionFamily;
+    }
+
+    public void setSurfaceExpressionFamily(PolynomialOperation surfaceExpressionFamily)
+    {
+        this.surfaceExpressionFamily = surfaceExpressionFamily;
+    }
+
+    public void setSurfaceTotalDegree(int surfaceTotalDegree)
+    {
+        this.surfaceTotalDegree = surfaceTotalDegree;
     }
 }

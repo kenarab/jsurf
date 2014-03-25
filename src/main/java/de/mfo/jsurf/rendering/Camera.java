@@ -17,11 +17,13 @@
 package de.mfo.jsurf.rendering;
 
 import javax.vecmath.*;
+
+import java.io.Serializable;
 import java.util.Properties;
 
 import de.mfo.jsurf.util.BasicIO;
 
-public class Camera
+public class Camera implements Serializable
 {
 
     public enum CameraType

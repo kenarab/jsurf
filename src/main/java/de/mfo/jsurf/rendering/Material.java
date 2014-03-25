@@ -17,11 +17,13 @@
 package de.mfo.jsurf.rendering;
 
 import javax.vecmath.*;
+
+import java.io.Serializable;
 import java.util.Properties;
 
 import de.mfo.jsurf.util.BasicIO;
 
-public class Material
+public class Material implements Serializable
 {
 
     private Color3f color;

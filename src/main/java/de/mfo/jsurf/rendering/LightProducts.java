@@ -16,9 +16,11 @@
 
 package de.mfo.jsurf.rendering;
 
+import java.io.Serializable;
+
 import javax.vecmath.*;
 
-public class LightProducts
+public class LightProducts implements Serializable
 {
 
     private LightSource lightSource;

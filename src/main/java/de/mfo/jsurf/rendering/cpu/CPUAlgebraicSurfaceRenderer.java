@@ -169,9 +169,9 @@ public class CPUAlgebraicSurfaceRenderer extends AlgebraicSurfaceRenderer
 	boolean success = true;
 
 	LinkedList<FutureTask<Boolean>> tasks = new LinkedList<FutureTask<Boolean>>();
-	for (int x = 0; x < width; x += xStep)
-	    for (int y = 0; y < height; y += yStep)
-		tasks.add(new FutureTask<Boolean>(new RenderingTask(dcsd, x, y, Math.min(x + xStep, width - 1), Math.min(y + yStep, height - 1))));
+//	for (int x = 0; x < width; x += xStep)
+//	    for (int y = 0; y < height; y += yStep)
+//		tasks.add(new FutureTask<Boolean>(new RenderingTask(dcsd, x, y, Math.min(x + xStep, width - 1), Math.min(y + yStep, height - 1))));
 
 	renderingTasks = tasks;
 

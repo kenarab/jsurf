@@ -17,11 +17,13 @@
 package de.mfo.jsurf.rendering;
 
 import javax.vecmath.*;
+
+import java.io.Serializable;
 import java.util.Properties;
 
 import de.mfo.jsurf.util.BasicIO;
 
-public class LightSource
+public class LightSource implements Serializable
 {
 
     public enum Status

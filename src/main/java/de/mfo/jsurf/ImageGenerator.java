@@ -10,4 +10,6 @@ public interface ImageGenerator
     void cancelTimer();
 
     public abstract void setSize(int size);
+
+//    void draw(ImgBuffer imgBuffer, String fileExportName, int aSize);
 }

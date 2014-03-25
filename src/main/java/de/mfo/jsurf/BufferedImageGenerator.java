@@ -24,8 +24,8 @@ public class BufferedImageGenerator implements ImageGenerator
 {
     protected Timer timer;
     protected int size;
-    private final String jsurf_filename;
-    private final String output_filename;
+    private String jsurf_filename;
+    private String output_filename;
 
     public void setSize(int size)
     {
@@ -37,6 +37,11 @@ public class BufferedImageGenerator implements ImageGenerator
 	this.size = size;
 	this.jsurf_filename = jsurf_filename;
 	this.output_filename = output_filename;
+    }
+
+    public BufferedImageGenerator(int size)
+    {
+	this.size = size;
     }
 
     public BufferedImage createBufferedImageFromRGB(ImgBuffer ib)
@@ -65,7 +70,7 @@ public class BufferedImageGenerator implements ImageGenerator
 	{
 	    bufferedImage = flipV(bufferedImage);
 	    javax.imageio.ImageIO.write(bufferedImage, "png", os);
-	    System.exit( 0 );
+	    System.exit(0);
 	}
 	catch (Exception e)
 	{
