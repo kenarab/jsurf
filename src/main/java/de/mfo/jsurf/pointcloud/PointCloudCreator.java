@@ -37,6 +37,7 @@ import de.mfo.jsurf.algebra.SimpleGradientCalculator;
 import de.mfo.jsurf.algebra.Simplificator;
 import de.mfo.jsurf.algebra.UnivariatePolynomial;
 import de.mfo.jsurf.parser.ParserService;
+import de.mfo.jsurf.util.ServiceLocator;
 
 public class PointCloudCreator // implements Runnable
 {
@@ -59,7 +60,7 @@ public class PointCloudCreator // implements Runnable
 	{
 	    Simplificator simplificator = new Simplificator();
 
-	    po = ParserService.parse(expression);
+	    po = ServiceLocator.getParserService().parse(expression);
 	    po = po.accept(simplificator, (Void) null);
 
 	    // calculate grad_x and simplify

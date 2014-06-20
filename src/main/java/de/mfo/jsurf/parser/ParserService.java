@@ -5,7 +5,7 @@ import de.mfo.jsurf.algebra.PolynomialOperation;
 
 public class ParserService
 {
-    public static PolynomialOperation parse(String s) throws Exception
+    public PolynomialOperation parse(String s) throws Exception
     {
 	return AlgebraicExpressionParser.parse(s);
     }

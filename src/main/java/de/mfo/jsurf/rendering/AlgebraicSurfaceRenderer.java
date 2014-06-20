@@ -31,6 +31,7 @@ import de.mfo.jsurf.algebra.PolynomialVariable;
 import de.mfo.jsurf.algebra.Simplificator;
 import de.mfo.jsurf.algebra.ToStringVisitor;
 import de.mfo.jsurf.parser.ParserService;
+import de.mfo.jsurf.util.ServiceLocator;
 
 public abstract class AlgebraicSurfaceRenderer implements Serializable
 {
@@ -107,7 +108,7 @@ public abstract class AlgebraicSurfaceRenderer implements Serializable
 
     public void setSurfaceFamily(String expression) throws Exception
     {
-	setSurfaceFamily(ParserService.parse(expression), expression);
+	setSurfaceFamily(ServiceLocator.getParserService().parse(expression), expression);
     }
 
     private void clearExpressionCache()
