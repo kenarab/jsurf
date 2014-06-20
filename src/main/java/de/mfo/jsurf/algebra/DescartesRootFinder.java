@@ -482,7 +482,7 @@ public class DescartesRootFinder implements RealRootFinder
 
     static double nextPowerOfTwo(double d) // computes the next power of two with respect to outward rounding
     {
-	return ServiceLocator.getMathService().nextPowerOfTwo(d);
+	return ServiceLocator.getInstance().getMathService().nextPowerOfTwo(d);
     }
 
     public static void main(String args[])

@@ -1,16 +1,34 @@
+
 package de.mfo.jsurf.util;
 
 import de.mfo.jsurf.parser.ParserService;
 
 public class ServiceLocator
 {
-    public static ParserService getParserService()
+    private static ServiceLocator instance;
+    private MathService mathService = new JVMMathService();
+
+    public ParserService getParserService()
     {
 	return new ParserService();
     }
 
-    public static MathService getMathService()
+    public MathService getMathService()
     {
-	return new JsMathService();
+	return mathService;
     }
+
+    public static ServiceLocator getInstance()
+    {
+	if (instance == null)
+	    instance = new ServiceLocator();
+
+	return instance;
+    }
+
+    public void setMathService(MathService mathService)
+    {
+        this.mathService = mathService;
+    }
+
 }

@@ -60,7 +60,7 @@ public class PointCloudCreator // implements Runnable
 	{
 	    Simplificator simplificator = new Simplificator();
 
-	    po = ServiceLocator.getParserService().parse(expression);
+	    po = ServiceLocator.getInstance().getParserService().parse(expression);
 	    po = po.accept(simplificator, (Void) null);
 
 	    // calculate grad_x and simplify

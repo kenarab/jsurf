@@ -108,7 +108,7 @@ public abstract class AlgebraicSurfaceRenderer implements Serializable
 
     public void setSurfaceFamily(String expression) throws Exception
     {
-	setSurfaceFamily(ServiceLocator.getParserService().parse(expression), expression);
+	setSurfaceFamily(ServiceLocator.getInstance().getParserService().parse(expression), expression);
     }
 
     private void clearExpressionCache()
